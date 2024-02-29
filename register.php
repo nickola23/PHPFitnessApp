@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,61 +10,66 @@
     <title>FitTrack Registracija</title>
 </head>
 <body>
-  <?php
-  include('./php/header.php');
+<?php
 
-  function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+if(isset($_SESSION["email"])) {
+  header('Location: index.php');
+}
+
+include('./php/header.php');
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+$emailErr = $imeErr = $lozinkaErr = $lozinka2Err = "";
+$email = $ime = $usernameNew = $lozinka = $lozinka2 = $hash = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["email"])) {
+    $emailErr = "Morate uneti email";
+  } else {
+    $email = test_input($_POST["email"]);
+    if (!preg_match("/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/", $email)){
+      $emailErr = "Niste pravilno uneli email";
+    }
+    else{
+      $emailErr = "";
+      $usernameNew = explode("@", $email)[0];
+    }
   }
 
-  $emailErr = $imeErr = $lozinkaErr = $lozinka2Err = "";
-  $email = $ime = $usernameNew = $lozinka = $lozinka2 = $hash = "";
-
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["email"])) {
-      $emailErr = "Morate uneti email";
-    } else {
-      $email = test_input($_POST["email"]);
-      if (!preg_match("/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/", $email)){
-        $emailErr = "Niste pravilno uneli email";
-      }
-      else{
-        $emailErr = "";
-        $usernameNew = explode("@", $email)[0];
-      }
+  if (empty($_POST["ime"])) {
+    $imeErr = "Morate uneti ime";
+  } else {
+    $ime = test_input($_POST["ime"]);
+    if (!preg_match("/^[a-zA-Z ]/", $ime)){
+      $imeErr = "Niste pravilno uneli ime";
     }
-
-    if (empty($_POST["ime"])) {
-      $imeErr = "Morate uneti ime";
-    } else {
-      $ime = test_input($_POST["ime"]);
-      if (!preg_match("/^[a-zA-Z ]/", $ime)){
-        $imeErr = "Niste pravilno uneli ime";
-      }
-      else{
-        $imeErr = "";
-      }
+    else{
+      $imeErr = "";
     }
-    
-    if (empty($_POST["lozinka"])) {
-      $lozinkaErr = "Morate uneti lozinku";
-    } else {
-      $lozinka = test_input($_POST["lozinka"]);
-      $lozinka2 = test_input($_POST["lozinka2"]);
-      if($lozinka != $lozinka2){
-        $lozinka2Err = "Lozinke moraju biti iste";
-      }
-      else{
-        $lozinka2Err = "";
-      }
-    }
-    $hash = password_hash($lozinka, PASSWORD_DEFAULT);
   }
-  ?>
-
+  
+  if (empty($_POST["lozinka"])) {
+    $lozinkaErr = "Morate uneti lozinku";
+  } else {
+    $lozinka = test_input($_POST["lozinka"]);
+    $lozinka2 = test_input($_POST["lozinka2"]);
+    if($lozinka != $lozinka2){
+      $lozinka2Err = "Lozinke moraju biti iste";
+    }
+    else{
+      $lozinka2Err = "";
+    }
+  }
+  $hash = password_hash($lozinka, PASSWORD_DEFAULT);
+}
+?>
+<main>
   <h1>Registruj se</h1>
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="">  
     Email: <input type="text" name="email">
@@ -95,5 +102,6 @@
         $conn->close();
       }
   ?>
+</main>
 </body>
 </html>

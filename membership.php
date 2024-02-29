@@ -12,10 +12,6 @@
 <body>
 <?php
 
-if(isset($_SESSION["email"])) {
-  header('Location: index.php');
-}
-
 include('./php/header.php');
 include('./php/konekcija.php');
 
@@ -69,8 +65,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <main>
-  <h1>Prijava</h1>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="">  
+    <h1>Clanarina</h1>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="">  
     Email: <input type="text" name="email">
     <span class="error">* <?php echo $emailErr?></span>
     <br><br>
@@ -78,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <span class="error">* <?php echo $lozinkaErr?></span><br>
     <button type="submit" >Prijavi se</button>
     <br><br>
-  </form>
+    </form>
     <?php
     
     ?>

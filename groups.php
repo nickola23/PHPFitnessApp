@@ -14,19 +14,19 @@
     include('./php/header.php');
     include('./php/konekcija.php');
 ?>
+<main>
+    <h1>Sve grupe</h1>
 
-<h1>Sve grupe</h1>
+    <?php
+        $sql = "SELECT * FROM grupa";
+        $result = $conn->query($sql);
 
-<?php
-    $sql = "SELECT * FROM grupa";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            echo "<p>Naziv:" . $row["naziv"] . ", trener:" .  $row["trener"] . "</p>";
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<p>Naziv:" . $row["naziv"] . ", trener:" .  $row["trener"] . "</p>";
+            }
         }
-      }
-?>
-
+    ?>
+</main>
 </body>
 </html>

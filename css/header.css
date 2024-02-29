@@ -4,8 +4,16 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 20px;
-    /* position: fixed; */
+    padding: 5px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}
+
+header .btnDark a{
+    color: #fff;
+    font-size: 15px;
 }
 
 .headerLogo{
