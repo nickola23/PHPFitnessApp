@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php
-  include('navbar.php');
+  include('./php/header.php');
 
   $emailErr = $imeErr = $lozinkaErr = $lozinka2Err = "";
   $email = $ime = $lozinka = $lozinka2 = "";
@@ -21,7 +21,7 @@
   }
 ?>
 
-<h1>Dobrodosli, 
-  <?php if(isset($_SESSION['email'])) echo $_SESSION["email"] ?></h1>
+<h1> 
+  Dobrodosli, <?php if(isset($_SESSION['email'])) echo  $_SESSION["email"] ?></h1>
 </body>
 </html>

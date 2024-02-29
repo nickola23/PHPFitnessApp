@@ -1,0 +1,35 @@
+header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+    /* position: fixed; */
+}
+
+.headerLogo{
+    margin: auto 0;
+}
+
+.headerLogo img{
+    width: 150px;
+    height: auto;
+    padding: 5px 0;
+}
+
+.headerLinks {
+    padding: 10px 15px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+}
+
+.headerLinks li{
+    padding: 10px 15px;
+}
+
+.headerLinks a {
+    color: #000;
+}

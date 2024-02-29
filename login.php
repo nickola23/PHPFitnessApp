@@ -6,12 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/global.css">
     <title>FitTrack Prijava</title>
 </head>
 <body>
 <?php
-include('navbar.php');
-include('konekcija.php');
+include('./php/header.php');
+include('./php/konekcija.php');
 
 function test_input($data) {
   $data = trim($data);
@@ -64,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <h1>Prijava</h1>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="" onsubmit='e.preventDefault();'>  
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="">  
   Email: <input type="text" name="email">
   <span class="error">* <?php echo $emailErr?></span>
   <br><br>
