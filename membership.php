@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/global.css">
-    <title>FitTrack Prijava</title>
+    <title>FitTrack Clanarina</title>
 </head>
 <body>
 <?php
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <main>
     <h1>Clanarina</h1>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="">  
-    Email: <input type="text" name="email">
+    Iznos za uplatu: <input type="text" name="email">
     <span class="error">* <?php echo $emailErr?></span>
     <br><br>
     Lozinka: <input type="password" name="lozinka">
