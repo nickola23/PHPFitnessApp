@@ -13,7 +13,7 @@
 <?php
 
 include('./php/header.php');
-include('./php/konekcija.php');
+include('./php/connection.php');
 
 function test_input($data) {
   $data = trim($data);

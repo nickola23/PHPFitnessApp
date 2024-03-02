@@ -27,7 +27,7 @@ section{
     margin: auto;
 }
 
-.btnLight{
+.btnLight, .btnLightOutline{
     background-color: #fff;
     color: #000;
     padding: 12px 25px;
@@ -38,6 +38,11 @@ section{
     height: fit-content;
     width: fit-content;
     cursor: pointer;
+}
+
+.btnLightOutline{
+    padding: 10px 23px;
+    border: 2px solid #000;
 }
 
 .btnDark{

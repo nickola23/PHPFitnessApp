@@ -14,12 +14,12 @@
 <body>
 <?php
     include('./php/header.php');
-    include('./php/konekcija.php');
+    include('./php/connection.php');
 ?>
 <main>
-    <?php 
+    <?php
         if(isset($_SESSION['email'])){
-            $sql = "SELECT g.naziv, g.slika FROM grupa g JOIN korisnik k ON k.idGrupe = g.id WHERE k.email LIKE '" . $_SESSION['email'] . "'";
+            $sql = "SELECT g.id, g.naziv, g.slika FROM grupa g JOIN korisnik k ON k.idGrupe = g.id WHERE k.email LIKE '" . $_SESSION['email'] . "'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -31,8 +31,8 @@
                         <h1>' . $row["naziv"] .'</h1>
                         </div>
                         <div class="heroBtns">
-                        <a href=""><div class="btnLight">Pregledaj clanove</div></a>
-                        <a href="./groups.php"><div class="btnDark">Ispisi me</div></a>
+                        <a href="./membership.php"><div class="btnLight">Uplatite clanarinu</div></a>
+                        <a href="./php/groupActions.php?id=null&action=leave"><div class="btnDark">Ispisi se</div></a>
                         </div>
                     </section>';
                 }
@@ -45,7 +45,19 @@
         <h1>Istrazite grupe</h1>
         <div class="groupsCont">
             <?php
-                $sql = "SELECT g.naziv, g.opis, g.slika, k.fullName FROM grupa g JOIN korisnik k ON g.trener = k.id";
+                $idGrupe = null;
+                if(isset($_SESSION['email'])){
+                    $email =  $_SESSION['email'];
+                    $sql = "SELECT idGrupe FROM korisnik WHERE email = '$email'";
+                    $result = $conn->query($sql);
+                    $row = $result->fetch_assoc();
+                    if ($row) {
+                        $idGrupe = $row['idGrupe'];
+                    }
+                }
+                
+
+                $sql = "SELECT g.id, g.naziv, g.opis, g.slika, k.fullName FROM grupa g JOIN korisnik k ON g.trener = k.id";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -58,9 +70,12 @@
                                     <h2>' . $row["naziv"] . '</h2>
                                     <p>Trener: ' .  $row["fullName"] . '</p>
                                     <p>' .  $row["opis"] . '</p>
-                                </div> 
-                                <a href="' . (isset($_SESSION['email']) ? "" : "./login.php") . '"><div class="btnDark">Pridruzi se</div></a>
-                            </div>
+                                </div>';
+                                echo $idGrupe == $row["id"] ?
+                                '<div class="btnLightOutline">Pridruzen</div>' :
+                                '<a href="' . (isset($_SESSION['email']) ? "./php/groupActions.php?id=" . $row["id"] . "&action=join" : "./login.php") . '"><div class="btnDark">Pridruzi se</div></a>';
+                        echo
+                            '</div>
                         </div>';
                     }
                 }

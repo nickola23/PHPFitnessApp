@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <?php
     if(isset($_POST["submit"]) && $emailErr == "" && $imeErr == "" && $lozinkaErr == "" && $lozinka2Err == ""){
       
-      include('./php/konekcija.php');
+      include('./php/connection.php');
         
       $sql = "INSERT INTO korisnik(email, username, fullName, password) VALUES ('$email', '$usernameNew', '$ime', '$hash')";
         if($conn->query($sql) === TRUE) {
