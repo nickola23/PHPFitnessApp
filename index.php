@@ -16,7 +16,7 @@
   include('./php/header.php');
 ?>
 <main>
-  <section class="hero">
+  <section class="hero" style="background-image: url(./images/hero.jpg);">
     <div class="heroDesc">
       <h1>Dobrodosli kuci</h1>
       <p>Pronadjite sebe u novom svetu, gde vasi snovi postaju stvarnost</p>
