@@ -4,7 +4,7 @@
 <header>
     <a href="index.php" class="headerLogo"><img src="./images/logoBlack.png" alt="Logo"></a>
     <ul class="headerLinks">
-        
+        <li><a href="index.php">Pocetna</a></li>
         <li><a href="groups.php">Grupe</a></li>
         <?php 
         if(isset($_SESSION['email'])) echo
