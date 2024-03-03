@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <main>
   <h1>Prijava</h1>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="">  
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="loginForm">  
     Email: <input type="text" name="email">
     <span class="error">* <?php echo $emailErr?></span>
     <br><br>

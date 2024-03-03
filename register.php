@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <main>
   <h1>Registruj se</h1>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="">  
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="registerForm">  
     Email: <input type="text" name="email">
     <span class="error">* <?php echo $emailErr?></span>
     <br><br>
