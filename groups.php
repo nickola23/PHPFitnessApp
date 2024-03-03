@@ -79,6 +79,11 @@
                         </div>';
                     }
                 }
+                else{
+                    echo '
+                    <div class="groupMainError">Nema postojecih grupa</div>
+                    ';
+                }
             ?>
         </div>
     </section>
