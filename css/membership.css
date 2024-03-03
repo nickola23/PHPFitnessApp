@@ -1,0 +1,96 @@
+.memHero{
+    width: 100%;
+    min-height: 400px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.secLeft{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.secLeft h1{
+    font-size: 44px;
+}
+
+.secLeft p{
+    font-size: 18px;
+}
+
+.secRight{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.secRight p{
+    font-size: 18px;
+}
+
+.date{
+    font-size: 26px;
+    font-weight: 700;
+    color: rgb(33, 216, 33);
+}
+
+.memSec{
+    width: 100%;
+    min-height: 400px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #e2e2e2;
+    color: #000;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 50px;
+}
+
+.memSec h2{
+    padding-bottom: 10px;
+}
+
+.memForm{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+}
+
+.memForm label{
+    font-size: 18px;
+    padding: 15px 0 5px 0;
+}
+
+.memForm input{
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    font-size: 18px;
+    background-color: #fff;
+}
+
+.nopayments{
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
