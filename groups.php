@@ -72,7 +72,7 @@
                                     <p>' .  $row["opis"] . '</p>
                                 </div>';
                                 echo $idGrupe == $row["id"] ?
-                                '<div class="btnLightOutline">Pridruzen</div>' :
+                                '<div class="btnLightOutline">Pridruzen/a</div>' :
                                 '<a href="' . (isset($_SESSION['email']) ? "./php/groupActions.php?id=" . $row["id"] . "&action=join" : "./login.php") . '"><div class="btnDark">Pridruzi se</div></a>';
                         echo
                             '</div>
