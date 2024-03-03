@@ -13,9 +13,12 @@
 </head>
 <body>
 <?php
-
 include('./php/header.php');
 include('./php/connection.php');
+
+if(!isset($_SESSION["email"])) {
+  header('Location: index.php');
+}
 
 function test_input($data) {
   $data = trim($data);
@@ -64,25 +67,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($conn->query($sql) === TRUE) {
       // echo "Uspesno uplacena clanarina";
+      header('Location: membership.php');
+      exit();
     } else{
       echo "Greska:" . $conn->error;
     }
     $conn->close();
   }
 }
+$email = $_SESSION['email'];
+$sql = "SELECT k.id, k.username, k.fullName, c.datumUplate, c.iznos  FROM korisnik k LEFT JOIN clanarina c ON k.id = c.idClana WHERE k.email ='$email' ORDER BY c.datumUplate DESC";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+
+$danas = new DateTime();
+
+if($row["datumUplate"] != null){
+  $datumUplate = new DateTime($row["datumUplate"]);
+  $datumVazenja = clone $datumUplate;
+  $datumVazenja->modify('+1 month');  
+}
+else{
+  $datumUplate = null;
+  $datumVazenja = null;
+}
+
 ?>
 <main>
   <section class="memHero">
     <div class="secLeft">
       <p>Moja Clanarina</p>
-      <h1>Ime i prezime</h1>
-      <p>@username</p>
+      <h1><?php echo $row["fullName"]?></h1>
+      <p>@<?php echo $row["username"]?></p>
     </div>
     <div class="secRight"></div>
   </section>
   <section class="secondary">
-    <h2>Clanarina vazi jos <span class="date">25 dana</span></h2>
-    <h2>- 23.5.2024.</h2>
+    <h2>
+      <?php
+        if($datumVazenja != null){
+          if($danas > $datumVazenja){
+            echo 'Clanarina vam je istekla pre <span class="date error">' . $danas->diff($datumVazenja)->days . ' dana</span>';
+          }
+          else{
+            echo 'Clanarina vazi jos <span class="date">' . $danas->diff($datumVazenja)->days . ' dana</span>';
+          }
+        } 
+        else echo "Niste uplatili clanarinu";
+      ?>
+    </h2>
+    <h2>- 
+    <?php
+      if($datumVazenja != null) echo $datumVazenja->format("d.m.Y");
+      else echo " -- --";
+    ?></h2>
   </section>
   <section class="memSec">
     <h2>Online uplata</h2>
@@ -93,13 +131,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <label for="iznos">Lozinka:</label>
       <input type="password" name="lozinka">
       <span class="error"><?php echo $lozinkaErr?></span><br>
-      <button type="submit" class="btnDark">Prijavi se</button>
+      <button type="submit" class="btnDark">Uplatite</button>
     </form>
   </section>
   <section class="memSec">
     <h2>Prethodne clanarine</h2>
-    <div class="nopayments">Nema dosadasnjih uplata</div>
-
+    <?php
+    $sql = "SELECT c.datumUplate, c.iznos  FROM korisnik k JOIN clanarina c ON k.id = c.idClana WHERE k.email ='$email' ORDER BY c.datumUplate DESC";
+    $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          echo '
+          <div class="payment">
+            <p>' . $row["iznos"] . '</p>
+            <p>' . $datumUplate->format("d.m.Y") . '.</p>
+          </div>';
+        }
+      }
+      else{
+        echo '<div class="nopayments">Nema dosadasnjih uplata</div>';
+      }
+    ?>
   </section>
 </main>
 </body>
