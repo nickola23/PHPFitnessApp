@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/login.css">
     <title>FitTrack Registracija</title>
 </head>
 <body>
@@ -70,22 +71,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <main>
-  <h1>Registruj se</h1>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="registerForm">  
-    Email: <input type="text" name="email">
-    <span class="error">* <?php echo $emailErr?></span>
-    <br><br>
-    Ime i prezime: <input type="text" name="ime">
-    <span class="error">* <?php echo $imeErr?></span>
-    <br><br>
-    Lozinka: <input type="password" name="lozinka">
-    <span class="error">* <?php echo $lozinkaErr?></span>
-    <br><br>
-    Ponovljena lozinka: <input type="password" name="lozinka2">
-    <span class="error">* <?php echo $lozinka2Err?></span><br>
-    <input type="submit" name="submit" value="Registruj se">
-    <br><br>
-  </form>
+  <section class="loginSec">
+    <div class="loginHeader">
+      <h1>Registracija</h1>
+    </div>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="registerForm"  class="loginForm">  
+      <label for="email">Email:</label><input type="text" name="email">
+      <span class="error"><?php echo $emailErr?></span>
+      <label for="ime">Ime i prezime:</label><input type="text" name="ime">
+      <span class="error"><?php echo $imeErr?></span>
+      <label for="lozinka">Lozinka:</label><input type="password" name="lozinka">
+      <span class="error"><?php echo $lozinkaErr?></span>
+      <label for="lozinka2">Ponovljena lozinka:</label><input type="password" name="lozinka2">
+      <span class="error"><?php echo $lozinka2Err?></span>
+      <p>* Pritiskom na dugme prihvatate uslove koriscenja <br></p>
+      <button type="submit" class="btnDark">Registruj se</button>
+      <p>Imate nalog? <a href="./login.php" class="loginLink">Prijavite se</a></p>
+    </form>
+  <section class="loginSec">
 
   <?php
     if(isset($_POST["submit"]) && $emailErr == "" && $imeErr == "" && $lozinkaErr == "" && $lozinka2Err == ""){
@@ -97,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           echo "Korisnik dodat u bazu";
           header('Location: login.php');
         } else {
-          echo "Greska: " . $sql . "<br>" . $conn->error;
+          echo "Greska: " . $sql . $conn->error;
         }
         $conn->close();
       }

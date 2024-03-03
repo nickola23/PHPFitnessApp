@@ -38,6 +38,8 @@ section{
     height: fit-content;
     width: fit-content;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .btnLightOutline{
@@ -56,6 +58,8 @@ section{
     height: fit-content;
     width: fit-content;
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .error{

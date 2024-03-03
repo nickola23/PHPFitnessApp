@@ -128,7 +128,7 @@ else{
       <label for="iznos">Iznos za uplatu:</label>
       <input type="text" name="iznos">
       <span class="error"><?php echo $iznosErr?></span>
-      <label for="iznos">Lozinka:</label>
+      <label for="lozinka">Lozinka:</label>
       <input type="password" name="lozinka">
       <span class="error"><?php echo $lozinkaErr?></span><br>
       <button type="submit" class="btnDark">Uplatite</button>

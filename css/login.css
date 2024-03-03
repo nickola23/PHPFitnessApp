@@ -1,0 +1,61 @@
+.loginSec{
+    flex-direction: column;
+}
+
+.loginHeader{
+    width: 100%;
+    max-width: 700px;
+    height: fit-content;
+    min-height: 100px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 30px 0 30px 50px;
+    margin: auto;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+    max-width: 700px;
+    background-color: #e2e2e2;
+    color: #000;
+    border-radius: 0 0 10px 10px;
+    padding: 50px;
+    margin: auto;
+}
+
+.loginForm label{
+    font-size: 18px;
+    padding: 15px 0 5px 0;
+}
+
+.loginForm label:not(:first-of-type){
+    margin-top: 20px;
+}
+
+.loginForm input{
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    font-size: 18px;
+    background-color: #fff;
+}
+
+.loginForm p{
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.loginLink{
+    text-decoration: underline;
+    color: #000;
+}
+
+.loginForm .btnDark{
+    margin-top: 20px;
+}
