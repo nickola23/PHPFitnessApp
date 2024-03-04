@@ -13,8 +13,8 @@
 </head>
 <body>
 <?php
-  include('./php/header.php');
-  include('./php/connection.php')
+  include('./components/header.php');
+  include('./database/connection.php')
 
 ?>
 <main>

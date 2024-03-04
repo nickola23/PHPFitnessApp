@@ -17,8 +17,8 @@ if(isset($_SESSION["email"])) {
   header('Location: index.php');
 }
 
-include('./php/header.php');
-include('./php/connection.php');
+include('./components/header.php');
+include('./database/connection.php');
 
 function test_input($data) {
   $data = trim($data);

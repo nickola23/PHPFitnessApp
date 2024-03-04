@@ -13,8 +13,8 @@
 </head>
 <body>
 <?php
-    include('./php/header.php');
-    include('./php/connection.php');
+    include('./components/header.php');
+    include('./database/connection.php');
 ?>
 <main>
     <?php
@@ -32,7 +32,7 @@
                         </div>
                         <div class="heroBtns">
                         <a href="./membership.php"><div class="btnLight">Uplatite clanarinu</div></a>
-                        <a href="./php/groupActions.php?id=null&action=leave"><div class="btnDark">Ispisi se</div></a>
+                        <a href="./handlers/groupActions.php?id=null&action=leave"><div class="btnDark">Ispisi se</div></a>
                         </div>
                     </section>';
                 }
@@ -73,7 +73,7 @@
                                 </div>';
                                 echo $idGrupe == $row["id"] ?
                                 '<div class="btnLightOutline">Pridruzen/a</div>' :
-                                '<a href="' . (isset($_SESSION['email']) ? "./php/groupActions.php?id=" . $row["id"] . "&action=join" : "./login.php") . '"><div class="btnDark">Pridruzi se</div></a>';
+                                '<a href="' . (isset($_SESSION['email']) ? "./handlers/groupActions.php?id=" . $row["id"] . "&action=join" : "./login.php") . '"><div class="btnDark">Pridruzi se</div></a>';
                         echo
                             '</div>
                         </div>';

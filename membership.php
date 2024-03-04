@@ -13,8 +13,8 @@
 </head>
 <body>
 <?php
-include('./php/header.php');
-include('./php/connection.php');
+include('./components/header.php');
+include('./database/connection.php');
 
 if(!isset($_SESSION["email"])) {
   header('Location: index.php');

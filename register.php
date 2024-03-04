@@ -17,7 +17,7 @@ if(isset($_SESSION["email"])) {
   header('Location: index.php');
 }
 
-include('./php/header.php');
+include('./components/header.php');
 
 function test_input($data) {
   $data = trim($data);
@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <?php
     if(isset($_POST["submit"]) && $emailErr == "" && $imeErr == "" && $lozinkaErr == "" && $lozinka2Err == ""){
       
-      include('./php/connection.php');
+      include('./database/connection.php');
         
       $sql = "INSERT INTO korisnik(email, username, fullName, password) VALUES ('$email', '$usernameNew', '$ime', '$hash')";
         if($conn->query($sql) === TRUE) {
