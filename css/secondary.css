@@ -1,4 +1,4 @@
-.secondary{
+.secondary {
     flex-direction: row;
     min-height: 150px;
     height: fit-content;
@@ -10,6 +10,21 @@
     background-color: #e2e2e2;
     border-radius: 10px;
 }
+
 .secondary a {
     color: #fff;
+}
+
+@media only screen and (max-width: 900px) {
+    .secondary {
+        flex-direction: column;
+        min-height: 50px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px 50px;
+    }
+
+    .secondary .btnDark {
+        margin: 20px 0;
+    }
 }

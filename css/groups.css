@@ -1,23 +1,23 @@
-.groupsSec{
+.groupsSec {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: fit-content;
 }
 
-.groupsSec h1{
+.groupsSec h1 {
     font-size: 28px;
     margin-top: 15px;
 }
 
-.groupsCont{
+.groupsCont {
     width: 100%;
     display: flex;
     flex-direction: column;
     height: fit-content;
 }
 
-.groupMain{
+.groupMain {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -25,7 +25,7 @@
     margin: 10px 0;
 }
 
-.groupMain img{
+.groupMain img {
     width: 500px;
     height: 300px;
     object-fit: cover;
@@ -33,7 +33,7 @@
     border-radius: 10px;
 }
 
-.groupRight{
+.groupRight {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -41,14 +41,36 @@
     width: 600px;
 }
 
-.groupRight p{
+.groupRight p {
     padding: 4px 0;
 }
 
-.groupMainError{
+.groupMainError {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     min-height: 70vh;
+}
+
+@media only screen and (max-width: 900px) {
+    .groupsSec {
+        width: 90%;
+    }
+
+    .groupMain {
+        flex-direction: column;
+    }
+
+    .groupMain img {
+        width: 100%;
+    }
+
+    .groupsSec .btnDark {
+        margin: 20px 0;
+    }
+
+    .groupRight {
+        width: 100%;
+    }
 }

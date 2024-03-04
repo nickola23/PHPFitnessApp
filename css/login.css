@@ -1,8 +1,8 @@
-.loginSec{
+.loginSec {
     flex-direction: column;
 }
 
-.loginHeader{
+.loginHeader {
     width: 100%;
     max-width: 700px;
     height: fit-content;
@@ -14,7 +14,7 @@
     margin: auto;
 }
 
-.loginForm{
+.loginForm {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -27,16 +27,16 @@
     margin: auto;
 }
 
-.loginForm label{
+.loginForm label {
     font-size: 18px;
     padding: 15px 0 5px 0;
 }
 
-.loginForm label:not(:first-of-type){
+.loginForm label:not(:first-of-type) {
     margin-top: 20px;
 }
 
-.loginForm input{
+.loginForm input {
     width: 100%;
     padding: 10px 15px;
     border: none;
@@ -46,16 +46,16 @@
     background-color: #fff;
 }
 
-.loginForm p{
+.loginForm p {
     font-size: 16px;
     padding: 10px 0;
 }
 
-.loginLink{
+.loginLink {
     text-decoration: underline;
     color: #000;
 }
 
-.loginForm .btnDark{
+.loginForm .btnDark {
     margin-top: 20px;
 }

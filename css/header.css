@@ -11,17 +11,29 @@ header {
     background-color: #fff;
 }
 
-header .btnDark a{
+header .btnDark a {
     color: #fff;
     font-size: 15px;
 }
 
-.headerLogo{
+.headerLogos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerLogo {
     margin: auto 0;
 }
 
-.headerLogo img{
+.headerLogo img {
     width: 150px;
+    height: auto;
+    padding: 5px 0;
+}
+
+.headerLogoIcon img {
+    width: 30px;
     height: auto;
     padding: 5px 0;
 }
@@ -34,10 +46,36 @@ header .btnDark a{
     font-weight: 600;
 }
 
-.headerLinks li{
+.headerLinks li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px 15px;
 }
 
 .headerLinks a {
     color: #000;
+}
+
+@media only screen and (max-width: 700px) {
+    header {
+        padding: 5px;
+        font-size: 12px !important;
+    }
+
+    header .btnDark a {
+        font-size: 12px;
+    }
+
+    .headerLogo {
+        display: none;
+    }
+
+    .headerLinks {
+        padding: 10px 0;
+    }
+
+    .headerLinks li {
+        padding: 10px 7px;
+    }
 }

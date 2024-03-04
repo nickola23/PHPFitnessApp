@@ -2,7 +2,10 @@
     <link rel="stylesheet" href="./css/header.css">
 </head>
 <header>
-    <a href="index.php" class="headerLogo"><img src="./images/logoBlack.png" alt="Logo"></a>
+    <div class="headerLogos">
+        <a href="index.php" class="headerLogoIcon"><img src="./images/logoBlackIcon.png" alt="Logo"></a>
+        <a href="index.php" class="headerLogo"><img src="./images/logoBlack.png" alt="Logo"></a>
+    </div>
     <ul class="headerLinks">
         <li><a href="index.php">Pocetna</a></li>
         <li><a href="groups.php">Grupe</a></li>
