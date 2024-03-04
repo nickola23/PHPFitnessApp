@@ -29,6 +29,7 @@
 
 .loginForm label {
     font-size: 18px;
+    font-weight: 700;
     padding: 15px 0 5px 0;
 }
 
@@ -39,11 +40,17 @@
 .loginForm input {
     width: 100%;
     padding: 10px 15px;
-    border: none;
+    border: 1px solid transparent;
     outline: none;
     margin-top: 5px;
     font-size: 18px;
+    font-weight: 500;
     background-color: #fff;
+    border-radius: 10px;
+}
+
+.loginForm input:focus{
+    border: 1px solid #000;
 }
 
 .loginForm p {

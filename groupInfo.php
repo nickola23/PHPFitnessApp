@@ -1,3 +1,5 @@
+<?php session_start()?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/hero.css">
+    <link rel="stylesheet" href="./css/secondary.css">
     <link rel="stylesheet" href="./css/groupInfo.css">
     <title>FitTrack Grupe</title>
 </head>
@@ -40,6 +43,10 @@
                         <p>' . $row["fullName"] . '</p>
                         <h2>Clanovi Grupe</h2>
                         <p>' . $row["fullName"] . '</p>
+                    </section>
+                    <section class="secondary">
+                        <h2>Pocnite da trenirate odmah</h2>
+                        <div class="btnDark"><a href="./membership.php">Uplatite clanarinu</a></div>
                     </section>
                     ';
             }
