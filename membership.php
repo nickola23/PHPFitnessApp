@@ -141,6 +141,7 @@ else{
     $result = $conn->query($sql);
       if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
+          $datumUplate = new DateTime($row["datumUplate"]);
           echo '
           <div class="payment">
             <p>' . $row["iznos"] . '</p>
