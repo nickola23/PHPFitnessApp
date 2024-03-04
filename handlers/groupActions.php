@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../database/connection.php");
+    include("../handlers/connection.php");
 
     if(isset($_GET['id']) && isset($_SESSION['email'])) {
         $groupId = $_GET['id'];

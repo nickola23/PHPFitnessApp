@@ -15,7 +15,7 @@
 <body>
 <?php
 include('./components/header.php');
-include('./database/connection.php');
+include('./handlers/connection.php');
 
 if(!isset($_SESSION["email"])) {
   header('Location: index.php');

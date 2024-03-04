@@ -19,7 +19,7 @@ if(isset($_SESSION["email"])) {
 }
 
 include('./components/header.php');
-include('./database/connection.php');
+include('./handlers/connection.php');
 
 function test_input($data) {
   $data = trim($data);

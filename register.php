@@ -92,13 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <section class="loginSec">
 
   <?php
-    if(isset($_POST["submit"]) && $emailErr == "" && $imeErr == "" && $lozinkaErr == "" && $lozinka2Err == ""){
-      
-      include('./database/connection.php');
+    if($_SERVER["REQUEST_METHOD"] == "POST" && $emailErr == "" && $imeErr == "" && $lozinkaErr == "" && $lozinka2Err == ""){
+      echo "Greska";
+      include('./handlers/connection.php');
         
       $sql = "INSERT INTO korisnik(email, username, fullName, password) VALUES ('$email', '$usernameNew', '$ime', '$hash')";
         if($conn->query($sql) === TRUE) {
-          echo "Korisnik dodat u bazu";
           header('Location: login.php');
         } else {
           echo "Greska: " . $sql . $conn->error;

@@ -15,7 +15,7 @@
 <body>
 <?php
   include('./components/header.php');
-  include('./database/connection.php')
+  include('./handlers/connection.php')
 
 ?>
 <main>
