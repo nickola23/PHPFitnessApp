@@ -71,12 +71,15 @@
                                     <h2>' . $row["naziv"] . '</h2>
                                     <p>Trener: ' .  $row["fullName"] . '</p>
                                     <p>' .  $row["opis"] . '</p>
-                                </div>';
-                                echo $idGrupe == $row["id"] ?
-                                '<div class="btnLightOutline">Pridruzen/a</div>' :
-                                '<a href="' . (isset($_SESSION['email']) ? "./handlers/groupActions.php?id=" . $row["id"] . "&action=join" : "./login.php") . '"><div class="btnDark">Pridruzi se</div></a>';
+                                </div>
+                                <div class="groupBtns">';
+                                    echo $idGrupe == $row["id"] ?
+                                    '<div class="btnLightOutline">Pridruzen/a</div>' :
+                                    '<a href="' . (isset($_SESSION['email']) ? "./handlers/groupActions.php?id=" . $row["id"] . "&action=join" : "./login.php") . '"><div class="btnDark">Pridruzi se</div></a>';
                         echo
-                            '</div>
+                                    '<a href="' . "./groupInfo.php?id=" . $row["id"] . '"><div class="btnLight">Saznaj vise</div></a>
+                                </div>
+                            </div>
                         </div>';
                     }
                 }

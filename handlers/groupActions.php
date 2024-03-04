@@ -2,7 +2,7 @@
     session_start();
     include("../handlers/connection.php");
 
-    if(isset($_GET['id']) && isset($_SESSION['email'])) {
+    if(isset($_GET['id']) && isset($_GET['action']) && isset($_SESSION['email'])) {
         $groupId = $_GET['id'];
         $action = $_GET['action'];
         $email = $_SESSION['email'];
