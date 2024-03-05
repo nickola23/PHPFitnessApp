@@ -41,9 +41,16 @@
                     <section class="memSec">
                         <h2>Trener</h2>
                         <p>' . $row["fullName"] . '</p>
-                        <h2>Clanovi Grupe</h2>
-                        <p>' . $row["fullName"] . '</p>
-                    </section>
+                        <h2>Clanovi Grupe</h2>';
+                        $sql = "SELECT k.fullName FROM grupa g JOIN korisnik k ON g.id = k.idGrupe WHERE g.id = '$groupId'";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+                                echo '<p>' . $row["fullName"] . '</p>';
+                            }
+                        }
+                        else{ echo "Grupa nema clanova"; }
+                    echo '</section>
                     <section class="secondary">
                         <h2>Pocnite da trenirate odmah</h2>
                         <div class="btnDark"><a href="./membership.php">Uplatite clanarinu</a></div>
