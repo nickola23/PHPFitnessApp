@@ -10,14 +10,28 @@
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/hero.css">
     <link rel="stylesheet" href="./css/groups.css">
+    <link rel="stylesheet" href="./css/groupsAdmin.css">
     <title>FitTrack Admin Grupe</title>
 </head>
 <body>
 <?php
     include('./components/header.php');
     include('./handlers/connection.php');
+
+    if(!isset($_SESSION["email"])) {
+        header('Location: index.php');
+      }
 ?>
 <main>
+    <section class="memHero">
+        <div class="secLeft">
+        <p>Admin</p>
+        <h1>Dobrodosli, nazad</h1>
+        <p></p>
+        <a href="./groupCreate.php"><div class="btnLight">Dodajte grupe</div></a>
+        </div>
+        <div class="secRight"></div>
+    </section>
     <section class="groupsSec">
         <h1>Izmenite grupe</h1>
         <div class="groupsCont">
@@ -39,7 +53,6 @@
                                 </div>
                                 <div class="groupBtns">
                                     <a href="./handlers/groupActions.php?id=' . $row["id"] . '&action=delete"><div class="btnRedOutline">Obrisi grupu</div></a>
-                                    <div class="btnLightOutline">Izmeni</div>
                                 </div>
                             </div>
                         </div>';

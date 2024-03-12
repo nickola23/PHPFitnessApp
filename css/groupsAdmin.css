@@ -1,0 +1,44 @@
+.memHero {
+    width: 100%;
+    min-height: 400px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.secLeft {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.secLeft h1 {
+    font-size: 44px;
+}
+
+.secLeft p {
+    font-size: 18px;
+}
+
+.secRight {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.secRight p {
+    font-size: 18px;
+}
+
+.btnLight{
+    margin-top: 10px;
+}
