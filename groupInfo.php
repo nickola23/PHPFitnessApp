@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/hero.css">
     <link rel="stylesheet" href="./css/secondary.css">
     <link rel="stylesheet" href="./css/groupInfo.css">
-    <title>FitTrack Grupe</title>
+    <title>FitTrack Informacije</title>
 </head>
 <body>
 <main>

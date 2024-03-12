@@ -28,7 +28,8 @@ section {
 }
 
 .btnLight,
-.btnLightOutline {
+.btnLightOutline,
+.btnRedOutline {
     background-color: #fff;
     color: #000;
     padding: 12px 25px;
@@ -46,6 +47,12 @@ section {
 .btnLightOutline {
     padding: 10px 23px;
     border: 2px solid #000;
+}
+
+.btnRedOutline{
+    padding: 10px 23px;
+    border: 2px solid red;
+    color: red;
 }
 
 .btnDark {

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2024 at 07:35 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Mar 12, 2024 at 05:53 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,16 +32,16 @@ CREATE TABLE `clanarina` (
   `idClana` int(11) NOT NULL,
   `iznos` decimal(10,2) NOT NULL,
   `datumUplate` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `clanarina`
 --
 
 INSERT INTO `clanarina` (`id`, `idClana`, `iznos`, `datumUplate`) VALUES
-(27, 3, '2500.00', '2024-03-03 10:53:02'),
-(28, 3, '2200.00', '2024-03-03 10:53:18'),
-(29, 2, '2700.00', '2024-03-03 17:23:29');
+(27, 3, 2500.00, '2024-03-03 10:53:02'),
+(28, 3, 2200.00, '2024-03-03 10:53:18'),
+(29, 2, 2700.00, '2024-03-03 17:23:29');
 
 -- --------------------------------------------------------
 
@@ -55,7 +55,7 @@ CREATE TABLE `grupa` (
   `trener` int(10) NOT NULL,
   `opis` text DEFAULT NULL,
   `slika` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `grupa`
@@ -79,17 +79,18 @@ CREATE TABLE `korisnik` (
   `fullName` varchar(60) NOT NULL,
   `regDate` timestamp NOT NULL DEFAULT current_timestamp(),
   `password` varchar(255) NOT NULL,
-  `idGrupe` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `idGrupe` int(11) DEFAULT NULL,
+  `admin` int(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `korisnik`
 --
 
-INSERT INTO `korisnik` (`id`, `email`, `username`, `fullName`, `regDate`, `password`, `idGrupe`) VALUES
-(2, 'pop@gmail.com', 'pop', 'Relja Popovic', '2024-02-29 13:44:26', '$2y$10$gCl/kW2wDrRQYQP233rGnOduTKCFy/GmdFJKOE9mRJfDieTlbK6P6', 1),
-(3, 'nikola@gmail.com', 'nikola', 'Nikola Milanovic', '2024-02-29 13:45:05', '$2y$10$LVM9ID6QEwVJNRtCC9wo1.ZSOmyxayIqZCHXjXO4XLtgmaw2oIDz6', 1),
-(4, 'letecaptica@gmail.com', 'letecaptica', 'Marko Milanovic', '2024-03-01 18:00:28', '$2y$10$SFbxEX0BP0flb2ib2ADHl.D28zv2261xExhxrX0lKqMhI4CXaDp6K', NULL);
+INSERT INTO `korisnik` (`id`, `email`, `username`, `fullName`, `regDate`, `password`, `idGrupe`, `admin`) VALUES
+(2, 'pop@gmail.com', 'pop', 'Relja Popovic', '2024-02-29 13:44:26', '$2y$10$gCl/kW2wDrRQYQP233rGnOduTKCFy/GmdFJKOE9mRJfDieTlbK6P6', 3, 1),
+(3, 'nikola@gmail.com', 'nikola', 'Nikola Milanovic', '2024-02-29 13:45:05', '$2y$10$LVM9ID6QEwVJNRtCC9wo1.ZSOmyxayIqZCHXjXO4XLtgmaw2oIDz6', 1, 0),
+(4, 'letecaptica@gmail.com', 'letecaptica', 'Marko Milanovic', '2024-03-01 18:00:28', '$2y$10$SFbxEX0BP0flb2ib2ADHl.D28zv2261xExhxrX0lKqMhI4CXaDp6K', NULL, 0);
 
 --
 -- Indexes for dumped tables

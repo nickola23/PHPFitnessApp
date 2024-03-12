@@ -10,9 +10,19 @@
         <li><a href="index.php">Pocetna</a></li>
         <li><a href="groups.php">Grupe</a></li>
         <?php 
-        if(isset($_SESSION['email'])) echo
-        '<li><a href="membership.php">Moja clanarina</a></li>
-        <li class="btnDark"><a href="./handlers/logout.php">Odjavi se</a></li>';
+        include("./handlers/connection.php");
+        if(isset($_SESSION['email'])){ 
+            $email = $_SESSION['email'];
+            $sql = "SELECT admin FROM korisnik WHERE email = '$email'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            if($row["admin"]){
+                echo '<li><a href="groupsAdmin.php">Izmeni grupe</a></li>';
+            }
+            echo
+            '<li><a href="membership.php">Moja clanarina</a></li>
+            <li class="btnDark"><a href="./handlers/logout.php">Odjavi se</a></li>';
+        }
         else echo 
         '<li class="btnDark"><a href="login.php">Prijavi se</a></li>
         <li><a href="register.php">Registruj se</a></li>'; ?>
