@@ -37,7 +37,7 @@
     margin-top: 20px;
 }
 
-.loginForm input {
+.loginForm input, .imageLabel {
     width: 100%;
     padding: 10px 15px;
     border: 1px solid transparent;
@@ -63,6 +63,19 @@
     color: #000;
 }
 
-.loginForm .btnDark {
+.loginForm .btnDark, .loginForm .btnLight  {
     margin-top: 20px;
+}
+
+input[type = "file"]{
+    display: none;
+}
+
+.imageLabel{
+    padding: 15px !important;
+    cursor: pointer;
+}
+
+.imageLabel:hover{
+    border: 1px solid #000;
 }

@@ -25,10 +25,10 @@
 <main>
     <section class="memHero">
         <div class="secLeft">
-        <p>Admin</p>
-        <h1>Dobrodosli, nazad</h1>
+        <p>Kreirajte, Izmenite, Obrisite.</p>
+        <h1>Sve na jednom mestu</h1>
         <p></p>
-        <a href="./groupCreate.php"><div class="btnLight">Dodajte grupe</div></a>
+        <a href="./groupEdit.php"><div class="btnLight">Dodajte grupe</div></a>
         </div>
         <div class="secRight"></div>
     </section>
