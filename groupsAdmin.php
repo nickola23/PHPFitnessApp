@@ -57,6 +57,7 @@
                                 </div>
                                 <div class="groupBtns">
                                     <a href="./handlers/groupActions.php?id=' . $row["id"] . '&action=delete"><div class="btnRedOutline">Obrisi grupu</div></a>
+                                    <a href="' . "./groupUpdate.php?id=" . $row["id"] . '"><div class="btnLight">Izmeni</div></a>
                                 </div>
                             </div>
                         </div>';
