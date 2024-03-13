@@ -29,7 +29,7 @@
         <h1>Sve na jednom mestu</h1>
         <p></p>
         <div class="groupBtns">
-            <a href="./groupEdit.php"><div class="btnLight">Dodajte grupe</div></a>
+            <a href="./groupCreate.php"><div class="btnLight">Dodajte grupe</div></a>
             <a href="./groups.php"><div class="btnLight">Pregledajte grupe</div></a>
         </div>
         
