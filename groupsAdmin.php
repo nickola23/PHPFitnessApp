@@ -28,7 +28,11 @@
         <p>Kreirajte, Izmenite, Obrisite.</p>
         <h1>Sve na jednom mestu</h1>
         <p></p>
-        <a href="./groupEdit.php"><div class="btnLight">Dodajte grupe</div></a>
+        <div class="groupBtns">
+            <a href="./groupEdit.php"><div class="btnLight">Dodajte grupe</div></a>
+            <a href="./groups.php"><div class="btnLight">Pregledajte grupe</div></a>
+        </div>
+        
         </div>
         <div class="secRight"></div>
     </section>

@@ -38,3 +38,16 @@
 .btnLight{
     margin-top: 10px;
 }
+
+@media only screen and (max-width: 900px) {
+    .memHero{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .secLeft {
+        width: 100%;
+    }
+    .secRight {
+        width: 100%;
+    }
+}
