@@ -14,9 +14,7 @@ This is a PHP-based fitness/gym application designed to help users track their m
 - View the history of all previous membership payments.
 
 ### 2. Group Training
-- Instructors can create training groups with:
-  - Group name.
-  - Training schedules.
+- Instructors can create training groups
 - Users can view available groups and register to participate.
 - Record all users within each group.
 
