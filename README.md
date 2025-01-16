@@ -1,10 +1,10 @@
 # Gym / Fitness Application
 
-PHP fitness/gym application for tracking memberships, creating/joining training groups, and providing statistical insights.
+PHP application for tracking memberships, creating/joining training groups, and providing statistical insights.
 
 ## 📒 Description
 
-This is a PHP-based fitness/gym application designed to help users track their memberships, explore and join training groups, while allowing admins and fitness centers to create training groups, and allow users to join group sessions, supplying them with statistics data.
+This is a PHP-based gym/fitness application designed to help users track their memberships, explore and join training groups, while allowing admins and fitness centers to create training groups, and allow users to join group sessions, supplying them with statistics data.
 
 ## ⚡ Features
 
