@@ -2,11 +2,11 @@
 
 PHP fitness/gym application for tracking memberships, creating/joining training groups, and providing statistical insights.
 
-## Description
+## 📒 Description
 
 This is a PHP-based fitness/gym application designed to help users track their memberships, explore and join training groups, while allowing admins and fitness centers to create training groups, and allow users to join group sessions, supplying them with statistics data.
 
-## Features
+## ⚡ Features
 
 ### 1. Membership Management
 - Track membership payment and expiration dates for each user.
@@ -18,12 +18,12 @@ This is a PHP-based fitness/gym application designed to help users track their m
 - Users can view available groups and register to participate.
 - Record all users within each group.
 
-## Technologies
+## 🔧 Technologies
 - **Backend**: PHP.
 - **Database**: MySQL.
 - **Frontend**: HTML, CSS, JavaScript.
 
-## How to Run the Project
+## 🔌 How to Run the Project
 
 1. Clone the repository:
    ```bash
