@@ -19,9 +19,9 @@ This is a PHP-based gym/fitness application designed to help users track their m
 - Record all users within each group.
 
 ## 🔧 Technologies
-- **Backend**: PHP.
-- **Database**: MySQL.
-- **Frontend**: HTML, CSS, JavaScript.
+- **Backend**: PHP
+- **Database**: MySQL
+- **Frontend**: HTML, CSS, JavaScript
 
 ## 🔌 How to Run the Project
 
